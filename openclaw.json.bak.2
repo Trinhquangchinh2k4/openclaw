@@ -1,0 +1,138 @@
+{
+  "auth": {
+    "profiles": {
+      "github-copilot:github": {
+        "provider": "github-copilot",
+        "mode": "token"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/openclaw_user/.openclaw/workspace",
+      "models": {
+        "github-copilot/gpt-5.3-codex": {}
+      },
+      "model": {
+        "primary": "github-copilot/gpt-5.3-codex"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "identity": {
+          "name": "MINH AI",
+          "emoji": "M",
+          "theme": "Scrum PM"
+        }
+      },
+      {
+        "id": "manh",
+        "name": "manh",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-manh",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/manh/agent",
+        "model": "github-copilot/gpt-5.3-codex",
+        "identity": {
+          "name": "Manh AI",
+          "emoji": "L",
+          "theme": "Dev Lead"
+        }
+      },
+      {
+        "id": "huyen",
+        "name": "huyen",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-huyen",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/huyen/agent",
+        "model": "github-copilot/gpt-5.3-codex"
+      },
+      {
+        "id": "huy",
+        "name": "huy",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-huy",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/huy/agent",
+        "model": "github-copilot/gpt-5.3-codex"
+      },
+      {
+        "id": "ha",
+        "name": "ha",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-ha",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/ha/agent",
+        "model": "github-copilot/gpt-5.3-codex"
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "bc2b52a5a32bb3aed8b4062173c848c5f3d0b20032bbe915"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "provider": "gemini"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "botToken": "8794999962:AAER-1nVBynSLQlEHx0Cw3NIIa9jut_St8s"
+    }
+  },
+  "skills": {
+    "entries": {
+      "goplaces": {
+        "apiKey": "no"
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-10T01:57:19.967Z",
+    "lastRunVersion": "2026.4.9",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.9",
+    "lastTouchedAt": "2026-04-13T05:27:09.426Z"
+  },
+  "plugins": {
+    "entries": {
+      "github-copilot": {
+        "enabled": true
+      }
+    }
+  }
+}

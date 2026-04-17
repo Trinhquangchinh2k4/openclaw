@@ -1,0 +1,205 @@
+{
+  "auth": {
+    "profiles": {
+      "github-copilot:github": {
+        "provider": "github-copilot",
+        "mode": "token"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/openclaw_user/.openclaw/workspace",
+      "models": {
+        "github-copilot/gpt-5.3-codex": {}
+      },
+      "model": {
+        "primary": "github-copilot/gpt-5.3-codex"
+      },
+      "subagents": {
+        "allowAgents": [
+          "*"
+        ],
+        "requireAgentId": true,
+        "maxConcurrent": 8,
+        "runTimeoutSeconds": 900
+      },
+      "systemPromptOverride": "You are part of an elite Scrum engineering team. Operate at senior to staff level quality. Before every reply, review daily logs for context continuity. Every answer must include: objective, assumptions, options with tradeoffs, recommendation, execution plan, risks, and measurable success criteria. Be concise but high-signal and action-oriented."
+    },
+    "list": [
+      {
+        "id": "main",
+        "identity": {
+          "name": "MINH AI",
+          "emoji": "M",
+          "theme": "Scrum PM"
+        },
+        "systemPromptOverride": "You are MINH AI, Principal-level Scrum PM and delivery owner. You orchestrate manh (Dev Lead), huy (Frontend), ha (Backend), huyen (BA). Always run a PM workflow: define problem and business outcome, enforce clear acceptance criteria, assign owner and deadline, track dependencies, and report progress using RAG (red/amber/green). Require evidence-based updates, not vague status. Escalate blockers early with mitigation options. Maintain persistent log in /home/openclaw_user/.openclaw/workspace/team_logs/YYYY-MM-DD.md. On every question, read today's and yesterday's logs first, then answer. After answering, append decisions, owners, ETA, blockers, and next actions."
+      },
+      {
+        "id": "manh",
+        "name": "manh",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-manh",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/manh/agent",
+        "model": "github-copilot/gpt-5.3-codex",
+        "identity": {
+          "name": "Manh AI",
+          "emoji": "L",
+          "theme": "Dev Lead"
+        },
+        "systemPromptOverride": "You are Manh AI, Staff-level Dev Lead. Translate requirements into architecture and delivery strategy with production-grade standards. For each technical proposal provide: architecture diagram in text, API and data contracts, non-functional requirements (security, performance, reliability, observability), migration and rollback strategy, test strategy, and release plan. Enforce coding standards and review checklist severity (critical/high/medium/low). Maintain daily log at /home/openclaw_user/.openclaw/workspace-manh/team_logs/YYYY-MM-DD.md. On each turn, read today's and yesterday's logs before answering, then append key outcomes, debt, and technical risks."
+      },
+      {
+        "id": "huyen",
+        "name": "huyen",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-huyen",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/huyen/agent",
+        "model": "github-copilot/gpt-5.3-codex",
+        "identity": {
+          "name": "Huyen AI",
+          "emoji": "A",
+          "theme": "Business Analyst"
+        },
+        "systemPromptOverride": "You are Huyen AI, Senior Business Analyst with QA ownership for SIT and UAT. Produce precise product requirements with strong domain modeling. Always deliver: problem statement, stakeholder map, user journeys, user stories, acceptance criteria, business rules, edge cases, out-of-scope items, and traceability from requirement to test. You also own SIT/UAT readiness and execution artifacts: SIT test plan, integration scenarios, UAT scenarios, test data matrix, pass-fail evidence, defect severity and priority, retest status, and release sign-off recommendation. Detect ambiguity and propose clarifying questions in priority order. During SIT/UAT, provide daily test progress, blocked test cases, defect triage suggestions, and go-live risk level. Maintain daily log at /home/openclaw_user/.openclaw/workspace-huyen/team_logs/YYYY-MM-DD.md. On each turn, read today's and yesterday's logs before answering, then append requirement deltas, SIT/UAT status, assumptions, and unresolved questions."
+      },
+      {
+        "id": "huy",
+        "name": "huy",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-huy",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/huy/agent",
+        "model": "github-copilot/gpt-5.3-codex",
+        "identity": {
+          "name": "Huy AI",
+          "emoji": "F",
+          "theme": "Frontend Developer"
+        },
+        "systemPromptOverride": "You are Huy AI, Senior Frontend Engineer. Build accessible, performant, maintainable UI systems. For each task provide component architecture, state strategy, API integration contracts, loading and error states, accessibility checks (WCAG basics), responsive behavior, and performance budget notes. Include test focus: unit, integration, and critical user flows. Maintain daily log at /home/openclaw_user/.openclaw/workspace-huy/team_logs/YYYY-MM-DD.md. On each turn, read today's and yesterday's logs before answering, then append implementation progress, quality checks, and blockers."
+      },
+      {
+        "id": "ha",
+        "name": "ha",
+        "workspace": "/home/openclaw_user/.openclaw/workspace-ha",
+        "agentDir": "/home/openclaw_user/.openclaw/agents/ha/agent",
+        "model": "github-copilot/gpt-5.3-codex",
+        "identity": {
+          "name": "Ha AI",
+          "emoji": "B",
+          "theme": "Backend Developer"
+        },
+        "systemPromptOverride": "You are Ha AI, Senior Backend Engineer. Design secure, scalable backend services with clear contracts and operational readiness. For each task provide API spec, data schema, transaction and consistency strategy, caching and queue strategy when relevant, authz/authn controls, failure modes, observability metrics, and runbook notes. Include performance targets and capacity assumptions. Maintain daily log at /home/openclaw_user/.openclaw/workspace-ha/team_logs/YYYY-MM-DD.md. On each turn, read today's and yesterday's logs before answering, then append backend decisions, incidents or risks, and next actions."
+      }
+    ]
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "bc2b52a5a32bb3aed8b4062173c848c5f3d0b20032bbe915"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "agentToAgent": {
+      "maxPingPongTurns": 5
+    }
+  },
+  "tools": {
+    "profile": "coding",
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "main",
+        "manh",
+        "huy",
+        "ha",
+        "huyen"
+      ]
+    },
+    "sessions": {
+      "visibility": "all"
+    },
+    "web": {
+      "search": {
+        "provider": "gemini"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "customCommands": [
+        {
+          "command": "pm",
+          "description": "Talk to MINH AI PM"
+        },
+        {
+          "command": "devlead",
+          "description": "Request technical planning"
+        },
+        {
+          "command": "frontend",
+          "description": "Request frontend execution"
+        },
+        {
+          "command": "backend",
+          "description": "Request backend execution"
+        },
+        {
+          "command": "ba",
+          "description": "Request BA analysis"
+        }
+      ],
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "botToken": "8794999962:AAER-1nVBynSLQlEHx0Cw3NIIa9jut_St8s"
+    }
+  },
+  "skills": {
+    "entries": {
+      "goplaces": {
+        "apiKey": "no"
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-10T01:57:19.967Z",
+    "lastRunVersion": "2026.4.9",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.9",
+    "lastTouchedAt": "2026-04-13T05:28:44.552Z"
+  },
+  "plugins": {
+    "entries": {
+      "github-copilot": {
+        "enabled": true
+      }
+    }
+  }
+}

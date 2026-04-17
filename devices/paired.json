@@ -1,0 +1,47 @@
+{
+  "7996354a3d34a38d067b76313355cfea8c9f32dfa6f12df99d38a6c977cbddac": {
+    "deviceId": "7996354a3d34a38d067b76313355cfea8c9f32dfa6f12df99d38a6c977cbddac",
+    "publicKey": "xNYUrZPASFdeBPagbjr5jgB6kU4ey3luuoruvt_-8HM",
+    "platform": "linux",
+    "clientId": "gateway-client",
+    "clientMode": "backend",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.read",
+      "operator.admin",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing",
+      "operator.talk.secrets"
+    ],
+    "approvedScopes": [
+      "operator.read",
+      "operator.admin",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing",
+      "operator.talk.secrets"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "pEtrMPirYWxV1WTGR351fGKSTnheilVIUUG7roydCK4",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.approvals",
+          "operator.pairing",
+          "operator.read",
+          "operator.talk.secrets",
+          "operator.write"
+        ],
+        "createdAtMs": 1775788244261,
+        "rotatedAtMs": 1776060804804
+      }
+    },
+    "createdAtMs": 1775788244261,
+    "approvedAtMs": 1776060804804
+  }
+}

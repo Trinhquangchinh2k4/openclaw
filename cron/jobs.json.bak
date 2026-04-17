@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "181e0482-6e85-4979-9c0f-5c00a5a20867",
+      "agentId": "main",
+      "name": "minh-ai-hourly-report",
+      "description": "MINH AI hourly scrum report to Telegram (14:00-23:00 ICT)",
+      "enabled": true,
+      "createdAtMs": 1776060912750,
+      "updatedAtMs": 1776060912750,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14-23 * * *",
+        "tz": "Asia/Ho_Chi_Minh"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Ban la MINH AI PM. Hay gui bao cao theo gio bang tieng Viet, ngan gon nhung day du gom: Tong quan tien do; Cong viec cua Manh/Huy/Ha/Huyen; Tai nguyen su dung va nguy co qua tai; Blocker va muc do anh huong; Ke hoach 1 gio tiep theo; Yeu cau nguoi dung can thiep neu co. Din dang RAG cho tung muc chinh."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "1079299777"
+      },
+      "state": {
+        "nextRunAtMs": 1776063600000
+      }
+    }
+  ]
+}

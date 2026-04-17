@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "lastGood": {
+    "github-copilot": "github-copilot:github"
+  },
+  "usageStats": {
+    "github-copilot:github": {
+      "errorCount": 0,
+      "lastFailureAt": 1776228293048,
+      "lastUsed": 1776442547578
+    }
+  }
+}

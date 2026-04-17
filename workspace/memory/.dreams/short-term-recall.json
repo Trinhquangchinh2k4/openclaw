@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-13T14:31:54.237Z",
+  "entries": {
+    "memory:memory/2026-04-13.md:33:36": {
+      "key": "memory:memory/2026-04-13.md:33:36",
+      "path": "memory/2026-04-13.md",
+      "startLine": 33,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "- Current trust sensitivity: user reacted negatively when reported \"3 banks\" but template had no filled values; must avoid optimistic wording and provide evidence-first progress. - Current known progress checkpoint shared with user: source files = 3 (TCB x2, VCB x1), unique banks with source = 2, filled-template completion = 0/30 at latest check. - Ops reliability issue occurred: dashboard endpoint had intermittent timeout despite service appearing active; user is sensitive to uptime and expects immediate remediation updates.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.0000013214268252574095,
+      "maxScore": 0.0000013214268252574095,
+      "firstRecalledAt": "2026-04-13T14:31:54.237Z",
+      "lastRecalledAt": "2026-04-13T14:31:54.237Z",
+      "queryHashes": [
+        "d815d53059fe"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "evidence-first",
+        "filled-template",
+        "0/30",
+        "current",
+        "trust",
+        "sensitivity",
+        "user",
+        "reacted"
+      ]
+    },
+    "memory:memory/2026-04-13.md:1:16": {
+      "key": "memory:memory/2026-04-13.md:1:16",
+      "path": "memory/2026-04-13.md",
+      "startLine": 1,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "# Durable memory — 2026-04-13 - User preference: address user as “anh Minh” or “sếp”; prefers respectful/polite Vietnamese tone. - Team naming preference: use Vietnamese names with suffix AI: Mạnh AI (Dev Lead), Huy AI (Frontend), Hà AI (Backend), Huyền AI (BA). - PM operating expectation: concise evidence-based status with RAG, owners, ETA, blockers/mitigation. - Dashboard initiative delivered: Ops Cockpit at port 18888 with realtime metrics, token/cost cards, RAG, blocker module, chat-style bot conversation panel, hide/show controls, Vietnamese-first UI text. - User requested maximum Vietnamese language in reports/UI and natural human-like bot conversation style. - User requested token/co",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.0000012924721307203643,
+      "maxScore": 0.0000012924721307203643,
+      "firstRecalledAt": "2026-04-13T14:31:54.237Z",
+      "lastRecalledAt": "2026-04-13T14:31:54.237Z",
+      "queryHashes": [
+        "d815d53059fe"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "respectful/polite",
+        "evidence-based",
+        "blockers/mitigation",
+        "token/cost",
+        "chat-style",
+        "hide/show",
+        "vietnamese-first",
+        "reports/ui"
+      ]
+    },
+    "memory:memory/2026-04-13.md:23:34": {
+      "key": "memory:memory/2026-04-13.md:23:34",
+      "path": "memory/2026-04-13.md",
+      "startLine": 23,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "- Reporting cadence decision: switch from hourly updates to a single daily report at 17:00 (Vietnam time). - User expectation: active, immediate interaction in this chat channel; avoid gaps that feel non-responsive. - Operational concern raised by user: RAM usage appears high; user expects clear explanation and optimization plan with evidence. # Durable memory — 2026-04-13 (append) - Financial data collection scope finalized by user: annual reports for years 2024 and 2025 only (not quarterly), strictly for 30 banks in provided template. - Execution rule for inaccessible sources: if website/captcha blocks retrieval, mark bank as PENDING with reason and notify user. - User explicitly prioriti",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 9.397358982394121e-7,
+      "maxScore": 9.397358982394121e-7,
+      "firstRecalledAt": "2026-04-13T14:31:54.237Z",
+      "lastRecalledAt": "2026-04-13T14:31:54.237Z",
+      "queryHashes": [
+        "d815d53059fe"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "non-responsive",
+        "website/captcha",
+        "reporting",
+        "cadence",
+        "decision",
+        "switch",
+        "hourly",
+        "updates"
+      ]
+    },
+    "memory:memory/2026-04-13.md:14:27": {
+      "key": "memory:memory/2026-04-13.md:14:27",
+      "path": "memory/2026-04-13.md",
+      "startLine": 14,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "- User preference: address user as “anh Minh” or “sếp”; prefers respectful/polite Vietnamese tone. - Team naming preference: use Vietnamese names with suffix AI: Mạnh AI (Dev Lead), Huy AI (Frontend), Hà AI (Backend), Huyền AI (BA). - PM operating expectation: concise evidence-based status with RAG, owners, ETA, blockers/mitigation. - Dashboard initiative delivered: Ops Cockpit at port 18888 with realtime metrics, token/cost cards, RAG, blocker module, chat-style bot conversation panel, hide/show controls, Vietnamese-first UI text. - User requested maximum Vietnamese language in reports/UI and natural human-like bot conversation style. - User requested token/cost formatting with thousands se",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 9.206053501778386e-7,
+      "maxScore": 9.206053501778386e-7,
+      "firstRecalledAt": "2026-04-13T14:31:54.237Z",
+      "lastRecalledAt": "2026-04-13T14:31:54.237Z",
+      "queryHashes": [
+        "d815d53059fe"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "respectful/polite",
+        "evidence-based",
+        "blockers/mitigation",
+        "token/cost",
+        "chat-style",
+        "hide/show",
+        "vietnamese-first",
+        "reports/ui"
+      ]
+    }
+  }
+}

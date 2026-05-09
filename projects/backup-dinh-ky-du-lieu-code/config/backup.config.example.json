@@ -1,0 +1,40 @@
+{
+  "mode": "dry-run",
+  "backupTimesICT": [
+    "03:00",
+    "12:00"
+  ],
+  "cronEnabled": false,
+  "pushEnabled": false,
+  "sourceFolders": [
+    "/root/.openclaw/workspace/projects/apple-watch-assistant",
+    "/root/.openclaw/workspace/projects/dashboard-progress-tracker",
+    "/root/.openclaw/workspace/projects/backup-dinh-ky-du-lieu-code",
+    "/root/.openclaw/workspace/team_logs"
+  ],
+  "excludePatterns": [
+    ".env",
+    ".env.*",
+    "*.pem",
+    "*.key",
+    "*.p12",
+    "*.crt",
+    "id_rsa",
+    "id_ed25519",
+    "*token*",
+    "*credentials*",
+    "node_modules",
+    ".git",
+    "__pycache__",
+    "logs",
+    "cache",
+    "tmp"
+  ],
+  "pushGithub": false,
+  "deleteData": false,
+  "notes": [
+    "example config only",
+    "do not place real token or secret here",
+    "GitHub repo target is known; deploy key write access remains input required"
+  ]
+}

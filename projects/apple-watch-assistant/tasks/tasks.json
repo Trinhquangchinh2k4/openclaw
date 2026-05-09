@@ -1,0 +1,141 @@
+{
+  "project": {
+    "id": "apple-watch-assistant",
+    "name": "Apple Watch Assistant",
+    "goal": "Apple Watch Assistant Linux/VPS Readiness: hoàn tất toàn bộ artifact/spec/backend mock có thể làm trên Linux/VPS trước khi chuyển sang Mac Build & Install.",
+    "owner": "main",
+    "reporter": "main",
+    "status": "active",
+    "rag": "GREEN",
+    "priority": "P0",
+    "acceptance": [
+      "Có source-of-truth task thật cho MVP Apple Watch",
+      "Có BRD versioned mới phản ánh installable-first acceptance",
+      "Có architecture watchOS/app/backend/voice",
+      "Có skeleton/repo structure",
+      "Có Linux/VPS readiness path tách riêng khỏi Mac Build & Install",
+      "Có thiết kế voice assistant tiếng Việt",
+      "Có cơ chế API key/token/config an toàn",
+      "Có acceptance checklist cho build đầu tiên"
+    ],
+    "assumptions": [
+      "Chưa execute backup trước Apple Watch",
+      "Sẽ dùng model policy 9router/cx/gpt-5.4",
+      "Backend/mock/spec tiếp tục được trên Linux/VPS; Mac Build & Install là phase sau do Minh owner và không execute trong VPS phase"
+    ],
+    "blockers": [
+      "Mac build/install track resumed: exact readiness still unverified pending Mac audit evidence for macOS/Xcode/xcodebuild/watchOS simulator/Apple ID-Team/device inputs"
+    ],
+    "nextActions": [
+      "Linux/VPS readiness complete and remains accepted at 8/8.",
+      "Resume Mac/Xcode readiness audit now that Minh has a MacBook available.",
+      "Check macOS version, Xcode version, xcodebuild path, watchOS simulator runtime, Apple ID / Developer Team, and real device/TestFlight inputs before claiming build/install readiness."
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "awa-01",
+      "project_id": "apple-watch-assistant",
+      "title": "Chốt scope Apple Watch Assistant MVP",
+      "priority": "P0",
+      "owner": "main",
+      "assignee": "huyen",
+      "executor": "huyen",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Scope baseline đã được ghi thành artifact và được Minh approve cho execution split P0a/P0b tại /root/.openclaw/workspace/projects/apple-watch-assistant/brd/103100_27042026_apple-watch-assistant.md cùng các BRD liên quan /root/.openclaw/workspace/projects/apple-watch-assistant/brd/100825_27042026_apple-watch-assistant.md",
+      "updated_at": "2026-04-27T10:31:00Z"
+    },
+    {
+      "task_id": "awa-02",
+      "project_id": "apple-watch-assistant",
+      "title": "Tạo BRD versioned mới cho Apple Watch Assistant",
+      "priority": "P0",
+      "owner": "main",
+      "assignee": "huyen",
+      "executor": "huyen",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "BRD versioned đã tồn tại và được cập nhật mới nhất tại /root/.openclaw/workspace/projects/apple-watch-assistant/brd/103100_27042026_apple-watch-assistant.md; prior evidence also includes /root/.openclaw/workspace/projects/apple-watch-assistant/brd/100825_27042026_apple-watch-assistant.md",
+      "updated_at": "2026-04-27T10:31:00Z"
+    },
+    {
+      "task_id": "awa-03",
+      "project_id": "apple-watch-assistant",
+      "title": "Thiết kế architecture watchOS/app/backend/voice assistant",
+      "priority": "P0",
+      "owner": "manh",
+      "assignee": "manh",
+      "executor": "manh",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Architecture v0.1 artifact exists at /root/.openclaw/workspace/projects/apple-watch-assistant/architecture/100825_27042026_apple-watch-assistant-architecture.md and was approved by Minh as the execution baseline in /root/.openclaw/workspace/projects/apple-watch-assistant/brd/103100_27042026_apple-watch-assistant.md",
+      "updated_at": "2026-04-27T10:31:00Z"
+    },
+    {
+      "task_id": "awa-04",
+      "project_id": "apple-watch-assistant",
+      "title": "Tạo project skeleton hoặc repo structure cho Apple Watch Assistant",
+      "priority": "P0",
+      "owner": "manh",
+      "assignee": "huy",
+      "executor": "huy",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Lightweight skeleton created under /root/.openclaw/workspace/projects/apple-watch-assistant/app with files: README.md, backend/README.md, backend/api_contract.md, backend/mock_server.py, watchos/README.md, iphone-companion/README.md, shared/config.example.json",
+      "updated_at": "2026-04-27T10:35:00Z"
+    },
+    {
+      "task_id": "awa-05",
+      "project_id": "apple-watch-assistant",
+      "title": "Xác định flow cài đặt/chạy thử trên Apple Watch hoặc simulator",
+      "priority": "P0",
+      "owner": "manh",
+      "assignee": "manh",
+      "executor": "manh",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Apple Watch Assistant MVP Readiness path documented with explicit split: backend/mock path unblocked now, simulator/real device path input required, and no signed Apple Watch install file exists yet. Evidence files: /root/.openclaw/workspace/projects/apple-watch-assistant/install-run/115159_27042026_install-run-test-path.md ; /root/.openclaw/workspace/projects/apple-watch-assistant/signing/100825_27042026_signing-path.md ; /root/.openclaw/workspace/projects/apple-watch-assistant/brd/103100_27042026_apple-watch-assistant.md",
+      "updated_at": "2026-04-27T11:51:59Z"
+    },
+    {
+      "task_id": "awa-06",
+      "project_id": "apple-watch-assistant",
+      "title": "Thiết kế voice assistant tiếng Việt",
+      "priority": "P0",
+      "owner": "ha",
+      "assignee": "ha",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Vietnamese voice assistant spec created for Apple Watch Assistant MVP Readiness with interaction model, STT/TTS decision, response style, API mapping, error handling, and acceptance boundaries. Evidence file: /root/.openclaw/workspace/projects/apple-watch-assistant/voice/115159_27042026_vietnamese-voice-assistant-spec.md ; related API contract: /root/.openclaw/workspace/projects/apple-watch-assistant/app/backend/api_contract.md ; readiness path: /root/.openclaw/workspace/projects/apple-watch-assistant/install-run/115159_27042026_install-run-test-path.md",
+      "updated_at": "2026-04-27T11:51:59Z"
+    },
+    {
+      "task_id": "awa-07",
+      "project_id": "apple-watch-assistant",
+      "title": "Thiết kế cơ chế API key/token/config an toàn",
+      "priority": "P0",
+      "owner": "ha",
+      "assignee": "ha",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Security/config spec created with secret handling, config separation, watch/iPhone config model, backend auth, dashboard token visibility, and safe local examples. Evidence files: /root/.openclaw/workspace/projects/apple-watch-assistant/security/115641_27042026_security-config.md ; /root/.openclaw/workspace/projects/apple-watch-assistant/app/shared/config.example.json ; /root/.openclaw/workspace/projects/apple-watch-assistant/app/.env.example",
+      "updated_at": "2026-04-27T11:56:41Z"
+    },
+    {
+      "task_id": "awa-08",
+      "project_id": "apple-watch-assistant",
+      "title": "Tạo acceptance checklist cho bản chạy được đầu tiên",
+      "priority": "P0",
+      "owner": "huyen",
+      "assignee": "huyen",
+      "executor": "huyen",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Linux/VPS Readiness complete. Mac Build & Install separated for Minh. No signed install artifact yet. Evidence: /root/.openclaw/workspace/projects/apple-watch-assistant/acceptance/120632_27042026_linux-vps-readiness-acceptance-checklist.md", 
+      "updated_at": "2026-04-27T12:06:32Z"
+    }
+  ]
+}

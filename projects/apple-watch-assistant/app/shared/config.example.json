@@ -1,0 +1,13 @@
+{
+  "projectId": "apple-watch-assistant",
+  "apiBaseUrl": "http://127.0.0.1:18795",
+  "assistantSessionMode": "isolated-session",
+  "auth": {
+    "token": "REPLACE_WITH_ENV_OR_LOCAL_SECRET_FILE"
+  },
+  "notes": [
+    "example config only",
+    "do not commit real secrets",
+    "watchOS/iPhone apps must load environment-specific config securely"
+  ]
+}

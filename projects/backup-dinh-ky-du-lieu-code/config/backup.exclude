@@ -1,0 +1,65 @@
+# Secret and credential material
+.env
+*.env
+*token*
+*secret*
+*credential*
+*.pem
+*.key
+id_rsa
+id_ed25519
+*_ed25519
+github-push/openclaw_backup_github_ed25519
+*.p12
+*.crt
+.ssh/
+
+# Dependency folders and virtual environments
+node_modules/
+.venv/
+.venv*/
+venv/
+venv*/
+__pycache__/
+**pycache**/
+
+# Caches and build/test outputs
+.pytest_cache/
+.cache/
+.next/
+dist/
+build/
+out/
+target/
+coverage/
+logs/
+sessions/
+tmp/
+uploads/
+
+# Local repositories and generated backup worktrees
+.git/
+.backup-repo/
+dry-run-output/
+test-results/dry-run-output_*/
+test-results/backup-dry-run_*/
+repo-preview/
+
+# Logs and local databases
+*.log
+*.sqlite
+*.db
+*.dump
+
+# Archives and large binary media
+*.tar
+*.gz
+*.tgz
+*.zip
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.ogg
+*.webm
+*.m4a

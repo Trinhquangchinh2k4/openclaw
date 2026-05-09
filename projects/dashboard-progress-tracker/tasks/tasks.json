@@ -1,0 +1,180 @@
+{
+  "project": {
+    "id": "dashboard-progress-tracker",
+    "name": "Dashboard Project Progress / Assignment Tracker",
+    "goal": "Biến dashboard thành bề mặt quản trị realtime đọc task source-of-truth đúng semantics owner/assignee/executor/reporter, token trạng thái, blocker và UI mobile thật.",
+    "owner": "main",
+    "reporter": "main",
+    "status": "active",
+    "rag": "RED",
+    "priority": "P1",
+    "acceptance": [
+      "Hiển thị progress theo done_task/total_task từ tasks.json",
+      "Mỗi task done có evidence thật",
+      "Agent panel hiển thị token/session cho từng agent với Token active yes/no rõ ràng",
+      "Owner activity giữ đúng semantics owner/assignee/executor/reporter",
+      "Có root cause + isolation/fix cho gateway session lock",
+      "Mobile cuối trang không còn vùng đen dư",
+      "Telegram bot model fallback/status is visible in Ops Cockpit metrics and monitored every 10 minutes without gateway restart"
+    ],
+    "assumptions": [
+      "Source-of-truth hiện tại là projects/*/tasks/tasks.json",
+      "Per-agent token hiện đang lấy từ usage trong session jsonl, chưa phải instrumentation độc lập"
+    ],
+    "blockers": [
+      "Per-agent token instrumentation chưa có nguồn độc lập ngoài usage đọc từ session jsonl; dashboard phải hiển thị Token active yes/no và 0 tokens cho agent inactive",
+      "Mobile bottom blank cần post-patch browser/device verification; CSS root cause đã được xử lý theo container/footer height"
+    ],
+    "nextActions": [
+      "Giữ Apple Watch/backend path isolated khỏi main session lock và chỉ báo RED nếu endpoint cụ thể bị chặn",
+      "Bổ sung instrumentation token theo agent độc lập với transcript usage",
+      "Verify live mobile sau patch CSS bằng snapshot/thiết bị thật",
+      "Telegram bot model routing implemented; current status AUTH_EXPIRED, Minh needs to refresh/re-auth bot/gateway ChatGPT session"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "dpt-01",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Audit lại task source-of-truth theo schema bắt buộc",
+      "priority": "P1",
+      "owner": "main",
+      "assignee": "main",
+      "executor": "main",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "/root/.openclaw/workspace/projects/dashboard-progress-tracker/tasks/tasks.json được chuẩn hoá schema task_id/project_id/title/priority/owner/assignee/executor/reporter/status/evidence/updated_at lúc 2026-04-27T09:07:43Z",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-02",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Mở lại project dashboard vì progress 100% trước đó không phản ánh blocker/token/mobile thật",
+      "priority": "P1",
+      "owner": "main",
+      "assignee": "main",
+      "executor": "main",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Evidence audit từ user acceptance + live code/task audit: token panel chưa đủ agent, owner regression còn, session lock còn, mobile blank tail còn; project không đủ điều kiện 100%",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-03",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Sửa backend đọc task source-of-truth schema mới và tính progress đúng done/total",
+      "priority": "P1",
+      "owner": "ha",
+      "assignee": "ha",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "in_progress",
+      "evidence": "Cần patch /root/.openclaw/ops-cockpit/app.py để đọc flat tasks schema mới, trả blockedTasks/priority/latestBrdPath/sourceOfTruth",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-04",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Sửa dashboard agent panel hiển thị token/session cho từng agent và Token active yes/no",
+      "priority": "P1",
+      "owner": "huy",
+      "assignee": "huy",
+      "executor": "huy",
+      "reporter": "main",
+      "status": "in_progress",
+      "evidence": "Panel hiện mới phản ánh usage/session chưa đủ ngữ nghĩa quản trị; cần update /root/.openclaw/ops-cockpit/public/index.html",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-05",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Tạo blocker task cho per-agent token instrumentation",
+      "priority": "P1",
+      "owner": "ha",
+      "assignee": "ha",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "blocked",
+      "evidence": "Nguồn token hiện tại đọc từ usage trong session jsonl qua parse_session_file()/conversations() ở /root/.openclaw/ops-cockpit/app.py; chưa có instrumentation độc lập per-agent",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-06",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Fix owner activity panel regression giữ đúng semantics owner/assignee/executor/reporter",
+      "priority": "P1",
+      "owner": "ha",
+      "assignee": "ha",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "in_progress",
+      "evidence": "Hiện owner activity dùng assignmentCount trọng số tổng hợp, chưa tách semantics chuẩn trong panel quản trị; cần live verify bằng task cụ thể sau patch",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-07",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Phân tích và isolate blocker gateway pairing/session lock",
+      "priority": "P1",
+      "owner": "manh",
+      "assignee": "manh",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "blocked",
+      "evidence": "Live host: /root/.openclaw/agents/main/sessions/8037c449-a64f-4180-9d39-a748c1d8f664.jsonl.lock chứa pid 34606; process openclaw-gateway còn chạy và đang giữ lock cho main session",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-08",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Fix khoảng trống đen cuối mobile page",
+      "priority": "P1",
+      "owner": "huy",
+      "assignee": "huy",
+      "executor": "huy",
+      "reporter": "main",
+      "status": "in_progress",
+      "evidence": "CSS hiện có html/body min-height:100%, .app min-height:100vh, .workspace min-height:100vh, rail sticky 100vh trong /root/.openclaw/ops-cockpit/public/index.html; nghi gây dư chiều cao mobile Safari",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-09",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Verify live dashboard/API sau khi patch token/ownership/mobile/project metadata",
+      "priority": "P1",
+      "owner": "huyen",
+      "assignee": "huyen",
+      "executor": "huyen",
+      "reporter": "main",
+      "status": "todo",
+      "evidence": "Chưa có live verification sau patch mới",
+      "updated_at": "2026-04-27T09:07:43Z"
+    },
+    {
+      "task_id": "dpt-10",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Memory Guard Phase 2: chẩn đoán RAM physical/gateway/extensionHost và bổ sung swap/available/top process lên dashboard",
+      "priority": "P1",
+      "owner": "main",
+      "assignee": "manh",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "in_progress",
+      "evidence": "Yêu cầu audit mới của user lúc 2026-04-27 10:23 UTC: chưa accept 'memory optimized' nếu RAM physical vẫn ~94%, chưa có diagnosis gateway ~1.9GB, chưa có diagnosis VS Code extensionHost ~1.09GB, và dashboard chưa hiển thị RAM available + swap + top processes. BRD update: /root/.openclaw/workspace/projects/dashboard-progress-tracker/brd/102300_27042026_dashboard-progress-tracker.md",
+      "updated_at": "2026-04-27T10:23:00Z"
+    },
+    {
+      "task_id": "dpt-11",
+      "project_id": "dashboard-progress-tracker",
+      "title": "Implement Telegram bot model fallback and recovery monitor",
+      "priority": "P1",
+      "owner": "main",
+      "assignee": "ha",
+      "executor": "ha",
+      "reporter": "main",
+      "status": "done",
+      "evidence": "Implemented editable routing config /root/.openclaw/telegram/model-routing.json, monitor /root/.openclaw/telegram/model_router.py, runtime fallback config in /root/.openclaw/openclaw.json, auth-expired no-fallback guard in OpenClaw runtime, and Ops Cockpit telegramBot metrics/status pill. Validation passed; /api/metrics shows telegramBot.status=auth_expired; live primary ping returned AUTH_EXPIRED so Minh re-auth is required.",
+      "updated_at": "2026-04-28T02:02:27.841142Z"
+    }
+  ]
+}

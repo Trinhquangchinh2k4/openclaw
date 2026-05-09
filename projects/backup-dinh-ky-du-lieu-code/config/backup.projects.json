@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "repo": {
+    "httpsUrl": "https://github.com/Trinhquangchinh2k4/openclaw-code-backup.git",
+    "sshUrl": "git@github.com:Trinhquangchinh2k4/openclaw-code-backup.git",
+    "branch": "main",
+    "localPath": "/root/.openclaw/backups/openclaw-code-backup"
+  },
+  "settings": {
+    "backupTimesICT": [
+      "03:00",
+      "12:00"
+    ],
+    "cronTimesUTC": [
+      "20:00",
+      "05:00"
+    ],
+    "cronEnabled": true,
+    "pushEnabled": false,
+    "reportsSubdir": "backups/reports"
+  },
+  "projects": [
+    {
+      "id": "apple-watch-assistant",
+      "enabled": true,
+      "sourcePaths": [
+        "/root/.openclaw/workspace/projects/apple-watch-assistant"
+      ],
+      "restorePath": "/root/.openclaw/workspace/projects/apple-watch-assistant",
+      "backupSubdir": "backups/projects/apple-watch-assistant",
+      "excludes": []
+    },
+    {
+      "id": "dashboard-progress-tracker",
+      "enabled": true,
+      "sourcePaths": [
+        "/root/.openclaw/workspace/projects/dashboard-progress-tracker",
+        "/root/.openclaw/ops-cockpit"
+      ],
+      "restorePath": "/root/.openclaw/workspace/projects/dashboard-progress-tracker",
+      "backupSubdir": "backups/projects/dashboard-progress-tracker",
+      "excludes": []
+    },
+    {
+      "id": "backup-dinh-ky-du-lieu-code",
+      "enabled": true,
+      "sourcePaths": [
+        "/root/.openclaw/workspace/projects/backup-dinh-ky-du-lieu-code"
+      ],
+      "restorePath": "/root/.openclaw/workspace/projects/backup-dinh-ky-du-lieu-code",
+      "backupSubdir": "backups/projects/backup-dinh-ky-du-lieu-code",
+      "excludes": []
+    }
+  ]
+}

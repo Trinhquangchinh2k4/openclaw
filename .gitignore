@@ -25,3 +25,4 @@ state/
 **/dry-run-output/
 *.pub
 github-push/openclaw_backup_github_ed25519
+.deploy/
